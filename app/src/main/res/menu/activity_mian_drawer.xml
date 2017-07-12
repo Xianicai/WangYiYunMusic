@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@mipmap/topmenu_icn_msg"
+            android:title="我的消息"/>
+        <item
+            android:id="@+id/nav_vip"
+            android:icon="@mipmap/topmenu_icn_vip"
+            android:title="会员中心"/>
+        <item
+            android:id="@+id/nav_shop"
+            android:icon="@mipmap/topmenu_icn_store"
+            android:title="商城"/>
+        <item
+            android:id="@+id/nav_online"
+            android:icon="@mipmap/topmenu_icn_free"
+            android:title="在线听歌免流量"
+            />
+    </group>
+    <group
+        android:id="@+id/group_manage"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_friend"
+            android:icon="@mipmap/topmenu_icn_level"
+            android:title="我的好友"
+            />
+        <item
+            android:id="@+id/nav_nearby"
+            android:icon="@mipmap/topmenu_icn_member"
+            android:textSize="@dimen/nav_tv_size"
+            android:title="附近的人"/>
+    </group>
+    <group
+        android:id="@+id/group_settings"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_skin"
+            android:icon="@mipmap/topmenu_icn_skin"
+            android:title="个性换肤"/>
+        <item
+            android:id="@+id/nav_identify"
+            android:icon="@mipmap/topmenu_icn_identify"
+            android:textSize="@dimen/nav_tv_size"
+            android:title="听歌识曲"/>
+        <item
+            android:id="@+id/nav_timing"
+            android:icon="@mipmap/topmenu_icn_time"
+            android:title="定时停止播放"/>
+        <item
+            android:id="@+id/nav_clock"
+            android:icon="@mipmap/topmenu_icn_clock"
+            android:title="音乐闹钟"/>
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@mipmap/topmenu_icn_set"
+            android:title="关于"/>
+
+    </group>
+</menu>

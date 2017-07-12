@@ -1,0 +1,5 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="theme_layout_margin">12dp</dimen>
+    <dimen name="nav_tv_size">16sp</dimen>
+</resources>
