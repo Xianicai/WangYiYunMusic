@@ -4,4 +4,11 @@
     <declare-styleable name="PicassoImageView">
         <attr name="placeholderImage" format="reference"></attr>
     </declare-styleable>
+    <!--Minilayout-->
+    <declare-styleable name="NativeMinilayout">
+        <attr name="miniName" format="string"></attr>
+        <attr name="miniLeftImge" format="reference"></attr>
+        <attr name="showBottomView" format="boolean"></attr>
+        <attr name="miniNumber" format="string"></attr>
+    </declare-styleable>
 </resources>
