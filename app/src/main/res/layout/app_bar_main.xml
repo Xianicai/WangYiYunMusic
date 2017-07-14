@@ -24,11 +24,55 @@
             <include layout="@layout/include_music_tab_bar"/>
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?actionBarSize">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?actionBarSize"/>
+        android:layout_height="match_parent"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+        <com.example.xianicai.wangyiyunmusic.base.PicassoImageView
+            android:id="@+id/image_cover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/default_cover"/>
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="有梦想的人不睡觉"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_toRightOf="@+id/image_cover"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="夏尼采"
+            android:textColor="@color/gray_number"
+            android:textSize="12sp"
+            android:layout_toRightOf="@+id/image_cover"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"/>
+        <ImageView
+            android:id="@+id/image_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_play_bar_btn_play"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+</RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

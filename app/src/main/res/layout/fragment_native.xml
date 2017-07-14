@@ -1,52 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
     <com.example.xianicai.wangyiyunmusic.widget.NativeMinilayout
         android:id="@+id/tv_native"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:miniLeftImge="@mipmap/lay_icn_document"
-        app:miniName="本地音乐"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:miniLeftImge="@mipmap/lay_icn_upquality"
+        app:miniName="本地音乐"/>
+
     <com.example.xianicai.wangyiyunmusic.widget.NativeMinilayout
         android:id="@+id/tv_lately"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:miniLeftImge="@mipmap/lay_icn_alb"
-        app:miniName="最近播放"
-        app:layout_constraintTop_toBottomOf="@+id/tv_native"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_native"
+        app:miniLeftImge="@mipmap/lay_icn_alb"
+        app:miniName="最近播放"/>
+
     <com.example.xianicai.wangyiyunmusic.widget.NativeMinilayout
         android:id="@+id/tv_download"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:miniLeftImge="@mipmap/lay_icn_dld"
-        app:miniName="下载管理"
-        app:layout_constraintTop_toBottomOf="@+id/tv_lately"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lately"
+        app:miniLeftImge="@mipmap/lay_icn_dld"
+        app:miniName="下载管理"/>
+
     <com.example.xianicai.wangyiyunmusic.widget.NativeMinilayout
-    android:id="@+id/tv_receiver"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    app:miniLeftImge="@mipmap/loading1"
-    app:miniName="我的电台"
-    app:layout_constraintTop_toBottomOf="@+id/tv_download"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"/>
+        android:id="@+id/tv_receiver"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_download"
+        app:miniLeftImge="@mipmap/lay_icn_document"
+        app:miniName="我的电台"/>
+
     <com.example.xianicai.wangyiyunmusic.widget.NativeMinilayout
         android:id="@+id/tv_collect"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:miniLeftImge="@mipmap/lay_icn_artist"
-        app:miniName="我的收藏"
-        app:layout_constraintTop_toBottomOf="@+id/tv_receiver"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_receiver"
+        app:miniLeftImge="@mipmap/lay_icn_artist"
+        app:miniName="我的收藏"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:background="#00000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_collect"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="24dp"
+        android:src="@mipmap/icon_arrow_down_small_selected"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:text="创建的歌单"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="@dimen/theme_layout_margin"
+        android:src="@mipmap/list_icn_mng"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintRight_toRightOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"/>
+    <com.example.xianicai.wangyiyunmusic.widget.NativeMinilayout
+        android:id="@+id/tv_like"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:miniLeftImge="@mipmap/rcd_icn_love"
+        app:miniName="我喜欢的音乐"/>
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="@dimen/theme_layout_margin"
+        android:src="@mipmap/list_icn_more"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_like"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_like"/>
 </android.support.constraint.ConstraintLayout>

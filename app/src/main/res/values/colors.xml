@@ -9,4 +9,11 @@
     <color name="linear_divider">#e3e3e3</color>
     <color name="black">#333333</color>
     <color name="gray_number">#888888</color>
+    <color name="gray_simple">#cccccc</color>
+    <color name="grey_50p">#809E9E9E</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_700_96p">#F5616161</color>
+    <color name="grey_300_96p">#F5E0E0E0</color>
+    <color name="grey_900">#212121</color>
+    <color name="grey_900_96p">#F5212121</color>
 </resources>

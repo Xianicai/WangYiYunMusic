@@ -60,7 +60,7 @@ public class NativeMinilayout extends RelativeLayout {
         mBottomView = (View) findViewById(R.id.bottom_view);
         mMiniLeftImge.setImageResource(mLeftImge);
         mMiniName.setText(mName);
-        mTvNumber.setText(mMiniNumber);
+        mTvNumber.setText("(0)");
         if (mShowBottomView) {
             mBottomView.setVisibility(VISIBLE);
         } else {

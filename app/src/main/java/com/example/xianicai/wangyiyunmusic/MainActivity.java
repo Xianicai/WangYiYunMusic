@@ -1,5 +1,6 @@
 package com.example.xianicai.wangyiyunmusic;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
@@ -13,8 +14,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.xianicai.wangyiyunmusic.base.BaseActivity;
+import com.example.xianicai.wangyiyunmusic.base.PicassoImageView;
+import com.example.xianicai.wangyiyunmusic.nativemusc.MusicBean;
+import com.example.xianicai.wangyiyunmusic.utils.ListUtil;
+import com.example.xianicai.wangyiyunmusic.utils.MusicUtil;
+
+import java.io.IOException;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -41,6 +50,16 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     ImageView mBarFriends;
     @BindView(R.id.viewpager)
     ViewPager mViewpager;
+    @BindView(R.id.image_cover)
+    PicassoImageView mImageCover;
+    @BindView(R.id.tv_name)
+    TextView mTvName;
+    @BindView(R.id.tv_author)
+    TextView mTvAuthor;
+    @BindView(R.id.image_play)
+    ImageView mImagePlay;
+    private MediaPlayer mPlayer = new MediaPlayer();
+    private List<MusicBean> mMusicBeanList;
 
     @Override
     public int getlayoutId() {
@@ -90,9 +109,31 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
             }
         });
+        initPlayer();
     }
 
-    @OnClick({R.id.nav_view, R.id.drawer_layout, R.id.iv_menu, R.id.bar_music, R.id.bar_net, R.id.bar_friends})
+    private void initPlayer() {
+        mMusicBeanList = MusicUtil.getMusicData(this);
+
+        if (ListUtil.isNotEmpty(mMusicBeanList)) {
+            mTvAuthor.setText(mMusicBeanList.size()+"");
+            play(mMusicBeanList.get(0));
+        }
+
+    }
+
+    public void play(MusicBean music) {
+        try {
+            mPlayer.reset();
+            mPlayer.setDataSource(music.getPath());
+            mPlayer.prepare();
+            mPlayer.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @OnClick({R.id.nav_view, R.id.drawer_layout, R.id.iv_menu, R.id.bar_music, R.id.bar_net, R.id.bar_friends,R.id.image_cover, R.id.tv_name, R.id.tv_author, R.id.image_play})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bar_music:
@@ -112,6 +153,15 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.iv_menu:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
+            case R.id.image_cover:
+                break;
+            case R.id.tv_name:
+                break;
+            case R.id.tv_author:
+                break;
+            case R.id.image_play:
+                initPlayer();
+                break;
         }
     }
 
@@ -126,4 +176,5 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
     }
+
 }
