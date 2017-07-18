@@ -1,4 +1,4 @@
-package com.example.xianicai.wangyiyunmusic.base;
+package com.example.xianicai.wangyiyunmusic.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
 import com.example.xianicai.wangyiyunmusic.R;
+
+import java.io.File;
 
 import it.sephiroth.android.library.picasso.Picasso;
 
@@ -46,5 +48,15 @@ public class PicassoImageView extends android.support.v7.widget.AppCompatImageVi
                     .into(this);
         }
 
+    }
+
+    public void setLocalImage(String path) {
+        if (mArrayResourceId != 0) {
+            Picasso.with(mCon).load(new File(path))
+                    .placeholder(mArrayResourceId)
+                    .fit()
+                    .centerCrop()
+                    .into(this);
+        }
     }
 }

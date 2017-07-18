@@ -70,14 +70,14 @@ public class NativeMinilayout extends RelativeLayout {
             @Override
             public void onClick(View view) {
                 if (mSetMiniClickListener != null) {
-                    mSetMiniClickListener.onMiniClickListener();
+                    mSetMiniClickListener.onMiniClickListener(view);
                 }
             }
         });
     }
 
     public interface SetMiniClickListener {
-        void onMiniClickListener();
+        void onMiniClickListener(View view);
     }
 
     public void setMiniLeftImge(int imge) {
@@ -88,7 +88,7 @@ public class NativeMinilayout extends RelativeLayout {
         mMiniName.setText(name);
     }
     public void setMiniNumber(String number) {
-        mTvNumber.setText(number);
+        mTvNumber.setText("("+number+")");
     }
     public void showBottomView(Boolean show) {
         if (show) {

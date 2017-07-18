@@ -11,4 +11,10 @@
         <attr name="showBottomView" format="boolean"></attr>
         <attr name="miniNumber" format="string"></attr>
     </declare-styleable>
+    <!--CommonActionBar-->
+    <declare-styleable name="CommonActionBar">
+        <attr name="imageLeft" format="reference"></attr>
+        <attr name="title" format="string"></attr>
+        <attr name="imageRight" format="reference"></attr>
+    </declare-styleable>
 </resources>

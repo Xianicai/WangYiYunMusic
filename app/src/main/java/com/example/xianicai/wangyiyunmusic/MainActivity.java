@@ -17,12 +17,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.xianicai.wangyiyunmusic.base.BaseActivity;
-import com.example.xianicai.wangyiyunmusic.base.PicassoImageView;
+import com.example.xianicai.wangyiyunmusic.nativemusc.NativeFragment;
+import com.example.xianicai.wangyiyunmusic.widget.PicassoImageView;
 import com.example.xianicai.wangyiyunmusic.nativemusc.MusicBean;
 import com.example.xianicai.wangyiyunmusic.utils.ListUtil;
 import com.example.xianicai.wangyiyunmusic.utils.MusicUtil;
+import com.example.xianicai.wangyiyunmusic.utils.PlayUtil;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -58,8 +60,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     TextView mTvAuthor;
     @BindView(R.id.image_play)
     ImageView mImagePlay;
+    @BindView(R.id.image_next)
+    ImageView mImageNext;
     private MediaPlayer mPlayer = new MediaPlayer();
-    private List<MusicBean> mMusicBeanList;
+    private List<MusicBean> mMusicBeanList = new ArrayList<>();
+    private int mMusicIndex = 0;
+    private MusicBean mMusicBean;
 
     @Override
     public int getlayoutId() {
@@ -109,31 +115,25 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
             }
         });
+        //查找本地音乐
         initPlayer();
     }
 
     private void initPlayer() {
         mMusicBeanList = MusicUtil.getMusicData(this);
-
         if (ListUtil.isNotEmpty(mMusicBeanList)) {
-            mTvAuthor.setText(mMusicBeanList.size()+"");
-            play(mMusicBeanList.get(0));
+            mMusicBean = mMusicBeanList.get(mMusicIndex);
+            mTvAuthor.setText(mMusicBean.getArtist());
+            mTvName.setText(mMusicBean.getTitle());
+            mImageCover.setLocalImage(mMusicBean.getCoverPath());
+
         }
 
     }
 
-    public void play(MusicBean music) {
-        try {
-            mPlayer.reset();
-            mPlayer.setDataSource(music.getPath());
-            mPlayer.prepare();
-            mPlayer.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    @OnClick({R.id.nav_view, R.id.drawer_layout, R.id.iv_menu, R.id.bar_music, R.id.bar_net, R.id.bar_friends,R.id.image_cover, R.id.tv_name, R.id.tv_author, R.id.image_play})
+    @OnClick({R.id.nav_view, R.id.drawer_layout, R.id.iv_menu, R.id.bar_music, R.id.bar_net, R.id.bar_friends,
+            R.id.image_cover, R.id.tv_name, R.id.tv_author, R.id.image_play, R.id.image_next})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bar_music:
@@ -160,8 +160,37 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.tv_author:
                 break;
             case R.id.image_play:
-                initPlayer();
+                if (PlayUtil.playerState == PlayUtil.PLAYER_IS_STOP) {
+                    PlayUtil.play(mPlayer, mMusicBean);
+                    mImagePlay.setImageResource(R.mipmap.ic_play_bar_btn_pause);
+                } else if (PlayUtil.playerState == PlayUtil.PLAYER_IS_PLAYING) {
+                    PlayUtil.pause(mPlayer);
+                    mImagePlay.setImageResource(R.mipmap.ic_play_bar_btn_play);
+                }
                 break;
+            case R.id.image_next:
+                playNext();
+                break;
+        }
+    }
+
+    /**
+     * 下一曲
+     */
+    private void playNext() {
+        mMusicBeanList = MusicUtil.getMusicData(this);
+        if ((mMusicBeanList.size() - 1) == mMusicIndex) {
+            mMusicIndex = 0;
+        } else {
+            mMusicIndex++;
+        }
+        if (ListUtil.isNotEmpty(mMusicBeanList)) {
+            mMusicBean = mMusicBeanList.get(mMusicIndex);
+            PlayUtil.play(mPlayer, mMusicBean);
+            mTvAuthor.setText(mMusicBean.getArtist());
+            mTvName.setText(mMusicBean.getTitle());
+            mImageCover.setLocalImage(mMusicBean.getCoverPath());
+            mImagePlay.setImageResource(R.mipmap.ic_play_bar_btn_pause);
         }
     }
 
@@ -176,5 +205,4 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
     }
-
 }

@@ -3,7 +3,7 @@
                 android:id="@+id/minilayout"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-    android:background="@color/white">
+                android:background="@color/white">
 
     <ImageView
         android:id="@+id/img_left"
@@ -20,27 +20,29 @@
         android:id="@+id/tv_miniName"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/img_left"
         android:gravity="center_vertical"
         android:text="我的消息"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginLeft="5dp"/>
+        android:textSize="16sp"/>
+
     <TextView
         android:id="@+id/tv_number"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/tv_miniName"
         android:gravity="center_vertical"
         android:text="(0)"
         android:textColor="@color/gray_number"
-        android:textSize="16sp"
-        android:layout_marginLeft="5dp"/>
+        android:textSize="16sp"/>
+
     <View
         android:id="@+id/bottom_view"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_marginLeft="60dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
         android:background="@color/linear_divider"/>
 </RelativeLayout>

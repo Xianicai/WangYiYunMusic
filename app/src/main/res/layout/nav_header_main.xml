@@ -5,7 +5,7 @@
     android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@mipmap/topinfo_ban_bg">
-<com.example.xianicai.wangyiyunmusic.base.PicassoImageView
+<com.example.xianicai.wangyiyunmusic.widget.PicassoImageView
     android:id="@+id/image_head"
     android:layout_width="75dp"
     android:layout_height="75dp"
