@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.xianicai.wangyiyunmusic.base.BaseActivity;
-import com.example.xianicai.wangyiyunmusic.nativemusc.NativeFragment;
+import com.example.xianicai.wangyiyunmusic.nativemusc.view.NativeFragment;
 import com.example.xianicai.wangyiyunmusic.widget.PicassoImageView;
 import com.example.xianicai.wangyiyunmusic.nativemusc.MusicBean;
 import com.example.xianicai.wangyiyunmusic.utils.ListUtil;

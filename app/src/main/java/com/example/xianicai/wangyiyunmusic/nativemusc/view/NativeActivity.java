@@ -1,4 +1,4 @@
-package com.example.xianicai.wangyiyunmusic.nativemusc;
+package com.example.xianicai.wangyiyunmusic.nativemusc.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -39,28 +39,22 @@ public class NativeActivity extends BaseActivity {
                 new FragmentPagerAdapter(getSupportFragmentManager()) {
                     @Override
                     public Fragment getItem(int position) {
-                        String tabId = "";
+                        Fragment fragment = null;
                         switch (position) {
                             case 0:
-//                                fragment = new MondayFragment();
-                                tabId = "1490371200";
+                                fragment = SingleFragment.newInstance();
                                 break;
                             case 1:
-//                                fragment = new TuesdayFragment();
-                                tabId = "1490457600";
+                                fragment = SingleFragment.newInstance();
                                 break;
                             case 2:
-//                                fragment = new ThursdayFragment();
-                                tabId = "1490544000";
+                                fragment = SingleFragment.newInstance();
                                 break;
                             case 3:
-//                                fragment = new WednesdayFragment();
-                                tabId = "1490630400";
+                                fragment = SingleFragment.newInstance();
                                 break;
                         }
-
-//                        return DailyFragment.newInstance(tabId);
-                        return NativeFragment.newInstance();
+                        return fragment;
                     }
 
                     @Override

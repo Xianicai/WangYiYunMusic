@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.xianicai.wangyiyunmusic.nativemusc.NativeActivity">
+    tools:context="com.example.xianicai.wangyiyunmusic.nativemusc.view.NativeActivity">
 
     <com.example.xianicai.wangyiyunmusic.widget.CommonActionBar
         android:id="@+id/action_bar"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toBottomOf="@+id/action_bar"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/theme_read"
-        app:tabIndicatorHeight="1dp"
+        app:tabIndicatorHeight="2dp"
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/theme_read"
         app:tabTextColor="@color/grey_333"/>

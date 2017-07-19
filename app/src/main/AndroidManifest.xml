@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".nativemusc.NativeActivity">
+        <activity android:name=".nativemusc.view.NativeActivity">
         </activity>
     </application>
 

@@ -1,9 +1,10 @@
-package com.example.xianicai.wangyiyunmusic.nativemusc;
+package com.example.xianicai.wangyiyunmusic.nativemusc.view;
 
 import android.view.View;
 
 import com.example.xianicai.wangyiyunmusic.R;
 import com.example.xianicai.wangyiyunmusic.base.BaseFragment;
+import com.example.xianicai.wangyiyunmusic.nativemusc.MusicBean;
 import com.example.xianicai.wangyiyunmusic.utils.MusicUtil;
 import com.example.xianicai.wangyiyunmusic.widget.NativeMinilayout;
 

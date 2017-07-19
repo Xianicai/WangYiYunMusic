@@ -55,8 +55,16 @@ public class CommonActionBar extends LinearLayout {
         mImageLeft = (ImageView) findViewById(R.id.image_left);
         mTvTitle = (TextView) findViewById(R.id.tv_title);
         mImageRight = (ImageView) findViewById(R.id.image_right);
-        mImageRight.setImageResource(mRightImage);
-        mImageLeft.setImageResource(mLeftImage);
+        if (mRightImage == 0) {
+            mImageRight.setImageResource(R.mipmap.actionbar_more);
+        } else {
+            mImageRight.setImageResource(mRightImage);
+        }
+        if (mLeftImage == 0) {
+            mImageLeft.setImageResource(R.mipmap.icon_back);
+        } else {
+            mImageLeft.setImageResource(mLeftImage);
+        }
         mTvTitle.setText(mTitle);
         mImageRight.setOnClickListener(new OnClickListener() {
             @Override
