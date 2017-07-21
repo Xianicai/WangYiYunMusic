@@ -24,6 +24,7 @@
         android:layout_marginLeft="@dimen/theme_layout_margin"
         android:layout_marginTop="5dp"
         android:text="夏尼采"
+        android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
 
@@ -33,12 +34,14 @@
         android:layout_height="0dp"
         android:paddingRight="@dimen/theme_layout_margin"
         android:src="@mipmap/zk"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-    <view
+    <View
+        android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="1px"
+        android:background="@color/linear_divider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>

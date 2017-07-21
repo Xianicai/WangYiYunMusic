@@ -37,6 +37,12 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.SingleAdap
         MusicBean musicBean = mMusicBeanList.get(position);
         holder.mTvName.setText(musicBean.getTitle());
         holder.mTvAuthor.setText(musicBean.getArtist());
+        holder.mImageMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
     }
 
     @Override

@@ -54,7 +54,7 @@ public class SingleFragment extends BaseFragment implements SingleView {
     @Override
     public void getNativeMusic(List<MusicBean> musicBeanList) {
         mMusicBeanList.clear();
-        musicBeanList.addAll(musicBeanList);
+        mMusicBeanList.addAll(musicBeanList);
         mSingleAdapter.notifyDataSetChanged();
     }
 
